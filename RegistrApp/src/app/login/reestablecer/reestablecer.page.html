@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary" routerLink="/login">
+        Acceder
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Reestablecer<br />Contraseña</h1>
+
+  <div id="form">
+    <ion-item class="ion-margin-bottom">
+      <ion-input [(ngModel)]="user.usuario"  placeholder="Nombre de Usuario" [type]="text"></ion-input> 
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-input [(ngModel)]="user.password" type="password" placeholder="Contraseña"></ion-input> 
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-input [(ngModel)]="user.confirmaPass" type="password" placeholder="Confirme Contraseña"></ion-input> 
+    </ion-item>
+
+    <ion-button expand="block" shape="round" (click)="reestablece()">Reestablecer Contraseña</ion-button>
+  </div>
+</ion-content>

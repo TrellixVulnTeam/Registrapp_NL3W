@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary" routerLink="/contactos">Lista de Curso</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="primary" routerLink="/home">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngFor="let element of listaContactos">  
+    <ion-item [routerLink]="['./', element.id]">
+      <ion-avatar slot="start">
+        <ion-img src= "assets/img/avatar.png"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        {{element.id}} {{element.nombre}} {{element.apellidos}}
+      </ion-label>
+    </ion-item>  
+  </ion-list>
+</ion-content>
+
+
+
+
+
+

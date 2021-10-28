@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="start" color="primary">{{contacto.nombre}} {{contacto.apellidos}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" routerLink="/contactos">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <ion-item>
+    <ion-text>{{contacto.email}}</ion-text>
+  </ion-item>
+</ion-content>  
+
