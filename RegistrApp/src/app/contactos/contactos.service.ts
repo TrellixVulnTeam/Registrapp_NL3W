@@ -8,61 +8,61 @@ export class ContactosService {
 
   listaContactos: Contacto[]= [
     {
-      id:'1',
+      id: 1,
       nombre:'Juan',
       apellidos:'Perez Gómez',
       email:'jp@gmail.com'
     },
     {
-      id:'2',
+      id: 2,
       nombre:'Maria',
       apellidos:'Silva Vera',
       email:'asdasdadsa@gmail.com'
     },
     {
-      id:'3',
+      id: 3,
       nombre:'Maria',
       apellidos:'Silva Vera',
       email:'asdasdadsa@gmail.com'
     },
     {
-      id:'4',
+      id: 4 ,
       nombre:'Maria',
       apellidos:'Silva Vera',
       email:'asdasdadsa@gmail.com'
     },
     {
-      id:'5',
+      id: 5,
       nombre:'Maria',
       apellidos:'Silva Vera',
       email:'asdasdadsa@gmail.com'
     },
     {
-      id:'6',
+      id: 6,
       nombre:'Maria',
       apellidos:'Silva Vera',
       email:'asdasdadsa@gmail.com'
     },
     {
-      id:'7',
+      id: 7,
       nombre:'Maria',
       apellidos:'Silva Vera',
       email:'asdasdadsa@gmail.com'
     },
     {
-      id:'8',
+      id: 8,
       nombre:'Maria',
       apellidos:'Silva Vera',
       email:'asdasdadsa@gmail.com'
     },
     {
-      id:'9',
+      id: 9,
       nombre:'Maria',
       apellidos:'Silva Vera',
       email:'asdasdadsa@gmail.com'
     },
     {
-      id:'10',
+      id: 10,
       nombre:'Maria',
       apellidos:'Silva Vera',
 
@@ -77,7 +77,7 @@ export class ContactosService {
      return [...this.listaContactos];
   }
 
-  getContacto(contactoId: string)
+  getContacto(contactoId: number)
   {
     return {
             ...this.listaContactos.find(contacto => {return contacto.id === contactoId })
@@ -88,7 +88,7 @@ export class ContactosService {
   {
     this.listaContactos.push(
       {
-        id: this.listaContactos.length+1+'',
+        id: this.listaContactos.length+1,
         nombre,
         apellidos,
         email
@@ -110,7 +110,7 @@ export class ContactosService {
     );
     toast.present();
   }
-  deleteContacto(contactoId: string)
+  deleteContacto(contactoId: number)
   {
     this.listaContactos=this.listaContactos.filter(contacto => {return contacto.id !== contactoId  });
   }

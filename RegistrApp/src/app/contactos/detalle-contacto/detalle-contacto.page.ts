@@ -18,7 +18,9 @@ contacto: Contacto;
     this.activateRoute.paramMap.subscribe(
       paramMap=>{
         const idContactoRecibido=paramMap.get('contactoId');
-        this.contacto=this.contactoService.getContacto(idContactoRecibido);
+        alert(idContactoRecibido);
+        alert(this.contactoService.getContacto(parseInt(idContactoRecibido)));
+        this.contacto=this.contactoService.getContacto(parseInt(idContactoRecibido));
       }
     );
   }

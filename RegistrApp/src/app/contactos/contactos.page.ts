@@ -7,7 +7,7 @@ import { ContactosService } from './contactos.service';
   styleUrls: ['./contactos.page.scss'],
 })
 export class ContactosPage implements OnInit {
-  listaContactos: Contacto [] =[];
+  listaContactos = [];
   
   constructor( private contactoService: ContactosService ) {}
   
