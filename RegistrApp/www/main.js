@@ -136,16 +136,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 476);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 5041);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 158);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ 1841);
 /* harmony import */ var _ionic_native_sqlite_porter_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/sqlite-porter/ngx */ 5855);
 /* harmony import */ var _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/sqlite/ngx */ 283);
+/* harmony import */ var _app_servicios_data_base_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../app/servicios/data-base.service */ 8145);
+
 
 
 
@@ -157,21 +159,168 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppModule = class AppModule {
+    constructor(db) { }
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.NgModule)({
+AppModule.ctorParameters = () => [
+    { type: _app_servicios_data_base_service__WEBPACK_IMPORTED_MODULE_4__.DataBaseService }
+];
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.NgModule)({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
         entryComponents: [],
-        imports: [_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpClientModule,
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.BrowserModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.IonicModule.forRoot(),
+        imports: [_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpClientModule,
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.BrowserModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicModule.forRoot(),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule],
-        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_9__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.IonicRouteStrategy },
+        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_10__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicRouteStrategy },
             _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_3__.SQLite,
             _ionic_native_sqlite_porter_ngx__WEBPACK_IMPORTED_MODULE_2__.SQLitePorter,],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ 8145:
+/*!************************************************!*\
+  !*** ./src/app/servicios/data-base.service.ts ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DataBaseService": () => (/* binding */ DataBaseService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic-native/sqlite/ngx */ 283);
+/* harmony import */ var _ionic_native_sqlite_porter_ngx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic-native/sqlite-porter/ngx */ 5855);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6215);
+
+
+
+
+
+
+
+let DataBaseService = class DataBaseService {
+    constructor(http, plataforma, sqlite, sqlPorter) {
+        this.dbReady = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(false);
+        this.listaContactos = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject([]);
+        //Detectar Plataforma
+        alert('xxxx-01');
+        plataforma.ready()
+            .then(() => {
+            this.sqlite = sqlite;
+            this.http = http;
+            this.sqlPorter = sqlPorter;
+            // Crear o abrir la base de datos DataBaseProyectoUno.db;
+            this.sqlite.create({
+                name: 'DataBaseProyectoUno.db',
+                location: 'default',
+                createFromLocation: 1
+            })
+                .then((db) => {
+                alert('xxxx-2');
+                this.dataBase = db;
+                this.crearTablas();
+                alert('xxxx-1 ');
+            }).catch(e => {
+                alert('Error conexión');
+                console.error(e);
+                console.error('Error Conexión ' + e.message);
+            });
+        }).catch(e => alert('Plataforma no leida.'));
+    }
+    crearTablas() {
+        // Obtener el archivo que contiene las sentencias SQL
+        this.http.get('../assets/db/CreateDatabase.sql', { responseType: 'text' })
+            .subscribe(sql => {
+            // Ejecutar las sentencias SQL del archivo
+            this.sqlPorter.importSqlToDb(this.dataBase, sql)
+                .then((_) => (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+                // Informar que la base de datos está lista
+                alert('xxxx-3 ');
+                this.cargarContactos();
+                alert('xxxx-4 ');
+                this.dbReady.next(true);
+                alert('xxxx-5 ');
+            })).catch(e => {
+                alert('Error al importar la base de datos');
+                console.error(e);
+                console.error('Error al importar la base de datos', e.message);
+            });
+        });
+    }
+    getDatabaseState() {
+        return this.dbReady.asObservable();
+    }
+    getContactos() {
+        return this.listaContactos.asObservable();
+    }
+    cargarContactos() {
+        return this.dataBase.executeSql('SELECT * FROM contacto', []).then(data => {
+            let contactos = [];
+            if (data.rows.length > 0) {
+                for (var i = 0; i < data.rows.length; i++) {
+                    contactos.push(data.rows.item(i));
+                }
+            }
+            this.listaContactos.next(contactos);
+        });
+    }
+    getContacto(id) {
+        return this.dataBase.executeSql('SELECT * FROM Contacto WHERE id = ?', [id]).then(resSelect => {
+            return {
+                id: resSelect.rows.item(0).id,
+                nombre: resSelect.rows.item(0).nombre,
+                apellidos: resSelect.rows.item(0).apellidos,
+                domicilio: resSelect.rows.item(0).domicilio,
+                email: resSelect.rows.item(0).email,
+                fono: resSelect.rows.item(0).fono
+            };
+        });
+    }
+    addContacto(nombre, apellidos, domicilio, email, fono) {
+        let data = [nombre, apellidos, domicilio, email, fono];
+        return this.dataBase.executeSql('INSERT INTO contacto (nombre, apellidos, domicilio, email,fono) VALUES (?, ?, ? ,? ,?)', data)
+            .then(res => {
+            this.cargarContactos();
+        });
+    }
+    updateContacto(nombre, apellidos, domicilio, email, fono, id) {
+        alert('Actualiza ' + id);
+        let data = [nombre, apellidos, domicilio, email, fono, id];
+        return this.dataBase.executeSql('UPDATE contacto SET nombre=?, apellidos=?, domicilio=?, email=?,fono=? WHERE id=?', data)
+            .then(res => {
+            this.cargarContactos();
+        });
+    }
+    deleteContacto(id) {
+        alert('Delete ' + id);
+        let data = [id];
+        return this.dataBase.executeSql('DELETE FROM contacto  WHERE id=?', data)
+            .then(res => {
+            this.cargarContactos();
+        });
+    }
+};
+DataBaseService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__.HttpClient },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.Platform },
+    { type: _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_0__.SQLite },
+    { type: _ionic_native_sqlite_porter_ngx__WEBPACK_IMPORTED_MODULE_1__.SQLitePorter }
+];
+DataBaseService = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Injectable)({
+        providedIn: 'root'
+    })
+], DataBaseService);
 
 
 

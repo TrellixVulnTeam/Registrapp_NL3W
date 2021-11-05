@@ -1155,9 +1155,9 @@ let UsuariosService = class UsuariosService {
     constructor() {
         this.listaUsuario = [
             {
-                name: 'Marcelo',
-                user: 'mmonte',
-                password: '123456'
+                name: 'User',
+                user: 'usuario',
+                password: '1234'
             },
         ];
     }

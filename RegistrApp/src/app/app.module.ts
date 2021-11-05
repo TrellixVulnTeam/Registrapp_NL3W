@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 import { SQLite } from '@ionic-native/sqlite/ngx';
-import {DataBaseServiceService} from '../app/servicios/data-base-service.service';	
+import {DataBaseService} from '../app/servicios/data-base.service';	
 
 
 @NgModule({
@@ -26,6 +26,6 @@ import {DataBaseServiceService} from '../app/servicios/data-base-service.service
   bootstrap: [AppComponent],
 })
 export class AppModule {
-  constructor(db: DataBaseServiceService){}
+  constructor(db: DataBaseService){}
 
 }
