@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuariosService}  from '../signup/usuario.service';
+import { UsuarioService}  from '../signup/usuario.service';
 import { Usuario } from '../signup/usuario.model';
 import { Router, NavigationExtras,ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
@@ -21,7 +21,7 @@ export class ReestablecerPage implements OnInit {
    campo: string;
 
   constructor(private router: Router,
-    private usuarioService: UsuariosService, private toastController: ToastController,private activatedRoute: ActivatedRoute) { }
+    private usuarioService: UsuarioService, private toastController: ToastController,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
   }

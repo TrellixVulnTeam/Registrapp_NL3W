@@ -32,7 +32,7 @@ export class DataBaseService {
     sqlPorter: SQLitePorter
   ) {
     //Detectar Plataforma
-    alert('xxxx-01');
+    
     plataforma
       .ready()
       .then(() => {
@@ -47,10 +47,10 @@ export class DataBaseService {
             createFromLocation: 1,
           })
           .then((db: SQLiteObject) => {
-            alert('xxxx-2');
+            
             this.dataBase = db;
             this.crearTablas();
-            alert('xxxx-1 ');
+            
           })
           .catch((e) => {
             alert('Error conexión');
@@ -62,23 +62,24 @@ export class DataBaseService {
   }
   crearTablas() {
     // Obtener el archivo que contiene las sentencias SQL
-    console.error('--obteniendo Create database--');
+    
     this.http
       .get('../assets/db/CreateDataBase.sql', { responseType: 'text' })
 
       .subscribe((sql) => {
-        console.error('--Ejecutar las sentencias SQL del archivo--');
+        console.log('--Ejecutar las sentencias SQL del archivo--');
         // Ejecutar las sentencias SQL del archivo
         this.sqlPorter
           .importSqlToDb(this.dataBase, sql)
           .then(async (_) => {
-            console.error('--Informar que la base de datos está lista--');
+            console.log('--Informar que la base de datos está lista--');
             // Informar que la base de datos está lista
-            alert('xxxx-3 ');
+            
             this.cargarContactos();
-            alert('xxxx-4 ');
+            
             this.dbReady.next(true);
-            alert('xxxx-5 ');
+            
+            console.log('--Create database obtenido--');
           })
           .catch((e) => {
             alert('Error al importar la base de datos');
@@ -119,30 +120,28 @@ export class DataBaseService {
           id: resSelect.rows.item(0).id,
           nombre: resSelect.rows.item(0).nombre,
           apellidos: resSelect.rows.item(0).apellidos,
-          domicilio: resSelect.rows.item(0).domicilio,
           email: resSelect.rows.item(0).email,
-          fono: resSelect.rows.item(0).fono,
         };
       });
   }
 
-  addContacto(nombre, apellidos, domicilio, email, fono) {
-    let data = [nombre, apellidos, domicilio, email, fono];
+  addContacto(nombre, apellidos, email) {
+    let data = [nombre, apellidos, email];
     return this.dataBase
       .executeSql(
-        'INSERT INTO contacto (nombre, apellidos, domicilio, email,fono) VALUES (?, ?, ? ,? ,?)',
+        'INSERT INTO contacto (nombre, apellidos, email) VALUES (?, ?, ? )',
         data
       )
       .then((res) => {
         this.cargarContactos();
       });
   }
-  updateContacto(nombre, apellidos, domicilio, email, fono, id) {
+  updateContacto(nombre, apellidos, email, id) {
     alert('Actualiza ' + id);
-    let data = [nombre, apellidos, domicilio, email, fono, id];
+    let data = [nombre, apellidos, email, id];
     return this.dataBase
       .executeSql(
-        'UPDATE contacto SET nombre=?, apellidos=?, domicilio=?, email=?,fono=? WHERE id=?',
+        'UPDATE contacto SET nombre=?, apellidos=?, email=?, WHERE id=?',
         data
       )
       .then((res) => {

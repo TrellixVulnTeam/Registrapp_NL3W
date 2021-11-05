@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { UsuariosService } from './usuario.service';
+import { UsuarioService } from './usuario.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -18,7 +18,7 @@ export class SignupPage implements OnInit {
 
   campo: string;
 
-  constructor(private router: Router,public toastController: ToastController, private usuarioService: UsuariosService ) { }
+  constructor(private router: Router,public toastController: ToastController, private usuarioService: UsuarioService ) { }
 
   ngOnInit() {
   }
@@ -38,7 +38,8 @@ export class SignupPage implements OnInit {
         this.usuarioService.addUsuario(
           this.usuario.name.valueOf(),
           this.usuario.user.valueOf(),
-          this.usuario.password.valueOf()),
+          this.usuario.password.valueOf(),
+          this.usuario.confirm_password.valueOf()),
           this.presentToast('Datos registrados correctamente');
           this.router.navigate(['/login'],navigationExtras);
       }  

@@ -1,6 +1,6 @@
 export interface Contacto{
-    id: number;
-    nombre: String;
-    apellidos: String;
-    email: String;
+    id: string;
+    nombre: string;
+    apellidos: string;
+    email: string;
 }

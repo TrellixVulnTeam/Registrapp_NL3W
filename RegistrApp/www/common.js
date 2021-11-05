@@ -591,7 +591,7 @@ let AsistenciaManualPage = class AsistenciaManualPage {
             }
         };
         if (this.validateModel(this.contact)) {
-            this.contactoService.addContacto(this.contact.id.valueOf(), this.contact.nombre.valueOf(), this.contact.apellidos.valueOf(), this.contact.email.valueOf()),
+            this.contactoService.addContacto(this.contact.nombre.valueOf(), this.contact.apellidos.valueOf(), this.contact.email.valueOf()),
                 this.presentToast('Datos registrados correctamente');
             this.router.navigate(['/contactos'], navigationExtras);
         }
@@ -650,114 +650,67 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ContactosService": () => (/* binding */ ContactosService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 8806);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 8806);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 4001);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ 2688);
+/* harmony import */ var _servicios_data_base_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../servicios/data-base.service */ 8133);
 
 
 
 let ContactosService = class ContactosService {
-    constructor(toastController) {
-        this.toastController = toastController;
-        this.listaContactos = [
-            {
-                id: 1,
-                nombre: 'Juan',
-                apellidos: 'Perez Gómez',
-                email: 'jp@gmail.com'
-            },
-            {
-                id: 2,
-                nombre: 'Maria',
-                apellidos: 'Silva Vera',
-                email: 'asdasdadsa@gmail.com'
-            },
-            {
-                id: 3,
-                nombre: 'Maria',
-                apellidos: 'Silva Vera',
-                email: 'asdasdadsa@gmail.com'
-            },
-            {
-                id: 4,
-                nombre: 'Maria',
-                apellidos: 'Silva Vera',
-                email: 'asdasdadsa@gmail.com'
-            },
-            {
-                id: 5,
-                nombre: 'Maria',
-                apellidos: 'Silva Vera',
-                email: 'asdasdadsa@gmail.com'
-            },
-            {
-                id: 6,
-                nombre: 'Maria',
-                apellidos: 'Silva Vera',
-                email: 'asdasdadsa@gmail.com'
-            },
-            {
-                id: 7,
-                nombre: 'Maria',
-                apellidos: 'Silva Vera',
-                email: 'asdasdadsa@gmail.com'
-            },
-            {
-                id: 8,
-                nombre: 'Maria',
-                apellidos: 'Silva Vera',
-                email: 'asdasdadsa@gmail.com'
-            },
-            {
-                id: 9,
-                nombre: 'Maria',
-                apellidos: 'Silva Vera',
-                email: 'asdasdadsa@gmail.com'
-            },
-            {
-                id: 10,
-                nombre: 'Maria',
-                apellidos: 'Silva Vera',
-                email: 'asdasdadsa@gmail.com'
-            },
-        ];
+    constructor(db) {
+        this.listaContactos = [];
+        this.db = db;
+        alert('Constructor db');
+    }
+    getDbState() {
+        return this.db.getDatabaseState();
     }
     getContactos() {
-        return [...this.listaContactos];
+        alert('Obtiene contactos ');
+        this.db.getDatabaseState().subscribe(rdy => {
+            if (rdy) {
+                this.db.getContactos().subscribe(contactos => {
+                    this.listaContactos = contactos;
+                });
+            }
+        });
+        return this.listaContactos;
     }
-    getContacto(contactoId) {
-        return Object.assign({}, this.listaContactos.find(contacto => { return contacto.id === contactoId; }));
-    }
-    addContacto(id, nombre, apellidos, email) {
-        this.listaContactos.push({
-            id: this.listaContactos.length + 1,
-            nombre,
-            apellidos,
-            email
+    getContacto(idContacto) {
+        alert('getContacto');
+        return this.db.getContacto(idContacto).then(data => {
+            this.contacto = data;
+            alert('Contacto Obtenido');
+            return this.contacto;
         });
     }
-    /**
-     * Muestra un toast al usuario (mensaje flotante)
-     * @param message Mensaje a presentar al usuario
-     * @param duration Duración el toast, este es opcional
-     */
-    presentToast(message, duration) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__awaiter)(this, void 0, void 0, function* () {
-            const toast = yield this.toastController.create({
-                message,
-                duration: duration ? duration : 2000
-            });
-            toast.present();
+    addContacto(nombre, apellidos, email) {
+        this.db.getDatabaseState().subscribe(rdy => {
+            if (rdy) {
+                this.db.addContacto(nombre, apellidos, email);
+            }
         });
     }
-    deleteContacto(contactoId) {
-        this.listaContactos = this.listaContactos.filter(contacto => { return contacto.id !== contactoId; });
+    updateContacto(id, nombre, apellidos, email) {
+        this.db.getDatabaseState().subscribe(rdy => {
+            if (rdy) {
+                alert('Actualiza Datos');
+                this.db.updateContacto(nombre, apellidos, email, id);
+            }
+        });
+    }
+    deleteContacto(id) {
+        this.db.getDatabaseState().subscribe(rdy => {
+            if (rdy) {
+                this.db.deleteContacto(id);
+            }
+        });
     }
 };
 ContactosService.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_1__.ToastController }
+    { type: _servicios_data_base_service__WEBPACK_IMPORTED_MODULE_0__.DataBaseService }
 ];
-ContactosService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+ContactosService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
         providedIn: 'root'
     })
@@ -856,12 +809,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DetalleContactoPage": () => (/* binding */ DetalleContactoPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 8806);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 8806);
 /* harmony import */ var _D_Duoc_UC_2_a_o_2_semestre_Programacion_app_movil_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_detalle_contacto_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./detalle-contacto.page.html */ 4449);
 /* harmony import */ var _detalle_contacto_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./detalle-contacto.page.scss */ 7982);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 4001);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 3252);
-/* harmony import */ var _contactos_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../contactos.service */ 6658);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 4001);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 3252);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 2688);
+/* harmony import */ var _contactos_contactos_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../contactos/contactos.service */ 6658);
+
+
 
 
 
@@ -869,25 +825,97 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let DetalleContactoPage = class DetalleContactoPage {
-    constructor(activateRoute, contactoService) {
+    constructor(router, activateRoute, contactoService, toastController) {
+        this.router = router;
         this.activateRoute = activateRoute;
+        this.toastController = toastController;
+        this.contacto = {
+            id: '',
+            nombre: '',
+            apellidos: '',
+            email: '',
+        };
         this.contactoService = contactoService;
+        this.activateRoute.paramMap.subscribe(paramMap => {
+            const idContactoRecibido = paramMap.get('contactoId');
+            alert(idContactoRecibido);
+            this.contactoService.getContacto(idContactoRecibido).then(res => {
+                this.contacto = res;
+                this.contacto.id = idContactoRecibido;
+            });
+        });
     }
     ngOnInit() {
         this.activateRoute.paramMap.subscribe(paramMap => {
             const idContactoRecibido = paramMap.get('contactoId');
             alert(idContactoRecibido);
-            alert(this.contactoService.getContacto(parseInt(idContactoRecibido)));
-            this.contacto = this.contactoService.getContacto(parseInt(idContactoRecibido));
+            this.contactoService.getContacto(idContactoRecibido).then(res => {
+                this.contacto = res;
+                this.contacto.id = idContactoRecibido;
+            });
         });
+    }
+    actualizarContacto() {
+        // Se declara e instancia un elemento de tipo NavigationExtras
+        if (this.validateModel(this.contacto)) {
+            alert('Inicia Actualiza');
+            alert('id: ' + this.contacto.id);
+            alert('Nombre: ' + this.contacto.nombre);
+            this.contactoService.updateContacto(this.contacto.id, this.contacto.nombre.valueOf(), this.contacto.apellidos.valueOf(), this.contacto.email.valueOf());
+            this.presentToast('Datos correctamente actualizados');
+            alert('Fin Actualiza');
+        }
+        else {
+            this.presentToast('Falta completar: ' + this.campo);
+        }
+    }
+    borrarContacto() {
+        alert('Inicia delete');
+        // Se declara e instancia un elemento de tipo NavigationExtras
+        this.contactoService.deleteContacto(this.contacto.id);
+        this.presentToast('Datos correctamente eliminados');
+        alert('Fin Delete');
+    }
+    /**
+    * Muestra un toast al usuario
+    * @param message Mensaje a presentar al usuario
+    * @param duration Duración el toast, este es opcional
+    */
+    presentToast(message, duration) {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
+            const toast = yield this.toastController.create({
+                message,
+                duration: duration ? duration : 2000
+            });
+            toast.present();
+        });
+    }
+    /**
+     * validateModel sirve para validar que se ingrese algo en los
+     * campos del html mediante su modelo
+     */
+    validateModel(model) {
+        // Recorro todas las entradas que me entrega Object entries y obtengo su clave, valor
+        for (var [key, value] of Object.entries(model)) {
+            // Si un valor es "" se retornara false y se avisara de lo faltante
+            if (value === '') {
+                // Se asigna el campo faltante
+                this.campo = key;
+                // Se retorna false
+                return false;
+            }
+        }
+        return true;
     }
 };
 DetalleContactoPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.ActivatedRoute },
-    { type: _contactos_service__WEBPACK_IMPORTED_MODULE_2__.ContactosService }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute },
+    { type: _contactos_contactos_service__WEBPACK_IMPORTED_MODULE_2__.ContactosService },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.ToastController }
 ];
-DetalleContactoPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+DetalleContactoPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
         selector: 'app-detalle-contacto',
         template: _D_Duoc_UC_2_a_o_2_semestre_Programacion_app_movil_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_detalle_contacto_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_detalle_contacto_page_scss__WEBPACK_IMPORTED_MODULE_1__]
@@ -1101,7 +1129,7 @@ let SignupPage = class SignupPage {
         }
         else {
             if (this.validateModel(this.usuario)) {
-                this.usuarioService.addUsuario(this.usuario.name.valueOf(), this.usuario.user.valueOf(), this.usuario.password.valueOf()),
+                this.usuarioService.addUsuario(this.usuario.name.valueOf(), this.usuario.user.valueOf(), this.usuario.password.valueOf(), this.usuario.confirm_password.valueOf()),
                     this.presentToast('Datos registrados correctamente');
                 this.router.navigate(['/login'], navigationExtras);
             }
@@ -1137,7 +1165,7 @@ let SignupPage = class SignupPage {
 SignupPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.ToastController },
-    { type: _usuario_service__WEBPACK_IMPORTED_MODULE_2__.UsuariosService }
+    { type: _usuario_service__WEBPACK_IMPORTED_MODULE_2__.UsuarioService }
 ];
 SignupPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
@@ -1159,39 +1187,34 @@ SignupPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "UsuariosService": () => (/* binding */ UsuariosService)
+/* harmony export */   "UsuarioService": () => (/* binding */ UsuarioService)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 8806);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 4001);
 
 
-let UsuariosService = class UsuariosService {
+let UsuarioService = class UsuarioService {
     constructor() {
         this.listaUsuario = [
             {
-                name: 'User',
-                user: 'usuario',
-                password: '1234'
+                name: 'usuario',
+                user: 'user',
+                password: '123456'
             },
         ];
     }
     getUsuario(usuarioInput) {
         return Object.assign({}, this.listaUsuario.find(usuario => { return usuario.user === usuarioInput; }));
     }
-    addUsuario(name, user, password) {
-        this.listaUsuario.push({
-            name,
-            user,
-            password
-        });
+    addUsuario(nombre, apellidos, usuario, password) {
     }
 };
-UsuariosService.ctorParameters = () => [];
-UsuariosService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+UsuarioService.ctorParameters = () => [];
+UsuarioService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
         providedIn: 'root'
     })
-], UsuariosService);
+], UsuarioService);
 
 
 

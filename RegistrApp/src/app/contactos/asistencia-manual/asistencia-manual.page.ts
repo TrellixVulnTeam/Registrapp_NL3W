@@ -34,11 +34,9 @@ export class AsistenciaManualPage implements OnInit {
     
       if(this.validateModel(this.contact)){
         this.contactoService.addContacto(
-          this.contact.id.valueOf(),
           this.contact.nombre.valueOf(),
           this.contact.apellidos.valueOf(),
-          this.contact.email.valueOf(),
-          ),
+          this.contact.email.valueOf()),
           this.presentToast('Datos registrados correctamente');
           this.router.navigate(['/contactos'],navigationExtras);
       }  

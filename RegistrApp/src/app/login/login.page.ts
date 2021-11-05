@@ -1,8 +1,9 @@
+import { UsuarioService } from './signup/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Usuario } from './signup/usuario.model';
-import { UsuariosService } from './signup/usuario.service';
+import { SQLite } from '@ionic-native/sqlite/ngx';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginPage implements OnInit {
  usuarioServic: Usuario;  
  campo:string;
 
-  constructor(private router: Router,private toastController: ToastController, private usuarioService: UsuariosService) { } 
+  constructor(private sqLite: SQLite,private router: Router,private toastController: ToastController,
+    private usuarioService: UsuarioService) { } 
   ngOnInit(){
   }
   ingresar(){

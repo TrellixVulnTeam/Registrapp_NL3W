@@ -163,7 +163,7 @@ let ReestablecerPage = class ReestablecerPage {
 };
 ReestablecerPage.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.Router },
-    { type: _signup_usuario_service__WEBPACK_IMPORTED_MODULE_2__.UsuariosService },
+    { type: _signup_usuario_service__WEBPACK_IMPORTED_MODULE_2__.UsuarioService },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.ToastController },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute }
 ];
