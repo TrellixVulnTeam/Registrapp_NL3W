@@ -124,22 +124,23 @@ let ReestablecerPage = class ReestablecerPage {
                 user: this.user
             }
         };
-        this.usuarioObj = this.usuarioService.getUsuario(this.user.usuario);
-        if (this.user.confirmaPass != this.user.password) {
-            this.presentToast('Las contraseñas no coinciden');
-        }
-        else {
-            if (this.validateModel(this.user)) {
-                console.log(this.usuarioObj);
-                console.log(this.user.password);
-                this.usuarioObj.password = this.user.password;
-                console.log(this.usuarioObj);
-                this.presentToast('Contraseña modificada');
-                this.router.navigate(['/login'], navigationExtras);
+        if (this.validateModel(this.user)) {
+            let usuarioObj = this.usuarioService.getUsuario(this.user.usuario);
+            if (this.user.confirmaPass != this.user.password) {
+                this.presentToast('Las contraseñas no coinciden');
             }
             else {
-                this.presentToast('Falta completar: ' + this.campo);
+                usuarioObj.then(res => {
+                    this.usuarioService.updateUsuario(res.id, res.name_user, res.user, this.user.password);
+                    this.presentToast('Contraseña actualizada');
+                    this.router.navigate(['/login'], navigationExtras);
+                }).catch(function (e) {
+                    alert('Usuario no registrado');
+                });
             }
+        }
+        else {
+            this.presentToast('Falta completar: ' + this.campo);
         }
     }
     presentToast(message, duration) {

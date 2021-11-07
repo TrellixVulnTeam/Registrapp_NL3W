@@ -191,6 +191,7 @@ let DataBaseService = class DataBaseService {
         //Detectar Plataforma
         this.dbReady = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(false);
         this.listaContactos = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject([]);
+        this.listaUsuarios = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject([]);
         plataforma
             .ready()
             .then(() => {
@@ -294,6 +295,60 @@ let DataBaseService = class DataBaseService {
             .executeSql('DELETE FROM contacto  WHERE id=?', data)
             .then((res) => {
             this.cargarContactos();
+        });
+    }
+    //Usuarios
+    getUsuarios() {
+        return this.listaUsuarios.asObservable();
+    }
+    cargarUsuarios() {
+        return this.dataBase
+            .executeSql('SELECT * FROM usuario', [])
+            .then((data) => {
+            let usuarios = [];
+            if (data.rows.length > 0) {
+                for (var i = 0; i < data.rows.length; i++) {
+                    usuarios.push(data.rows.item(i));
+                }
+            }
+            this.listaUsuarios.next(usuarios);
+        });
+    }
+    getUsuario(user) {
+        return this.dataBase
+            .executeSql('SELECT * FROM usuario WHERE user = ?', [user])
+            .then((resSelect) => {
+            return {
+                id: resSelect.rows.item(0).id,
+                name_user: resSelect.rows.item(0).name_user,
+                user: resSelect.rows.item(0).user,
+                pass: resSelect.rows.item(0).pass
+            };
+        });
+    }
+    addUsuario(name, user, password) {
+        let data = [name, user, password];
+        return this.dataBase
+            .executeSql('INSERT INTO usuario (name_user, user, pass) VALUES (?, ?, ? )', data)
+            .then((res) => {
+            this.cargarUsuarios();
+        });
+    }
+    updateUsuario(name_user, user, pass, id) {
+        let data = [name_user, user, pass, id];
+        return this.dataBase
+            .executeSql('UPDATE usuario SET name_user=?, user=?, pass=? WHERE id=?', data)
+            .then((res) => {
+            this.cargarUsuarios();
+        });
+    }
+    deleteUsuario(id) {
+        alert('Delete ' + id);
+        let data = [id];
+        return this.dataBase
+            .executeSql('DELETE FROM usuario  WHERE id=?', data)
+            .then((res) => {
+            this.cargarUsuarios();
         });
     }
 };

@@ -38,8 +38,7 @@ export class SignupPage implements OnInit {
         this.usuarioService.addUsuario(
           this.usuario.name.valueOf(),
           this.usuario.user.valueOf(),
-          this.usuario.password.valueOf(),
-          this.usuario.confirm_password.valueOf()),
+          this.usuario.password.valueOf()),
           this.presentToast('Datos registrados correctamente');
           this.router.navigate(['/login'],navigationExtras);
       }  

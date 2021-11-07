@@ -3,6 +3,7 @@ import { UsuarioService}  from '../signup/usuario.service';
 import { Usuario } from '../signup/usuario.model';
 import { Router, NavigationExtras,ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 
 @Component({
   selector: 'app-reestablecer',
@@ -16,7 +17,7 @@ export class ReestablecerPage implements OnInit {
     confirmaPass : ''
     
   };
-  usuarioObj: Usuario;
+  
      
    campo: string;
 
@@ -31,28 +32,27 @@ export class ReestablecerPage implements OnInit {
         user: this.user 
       }
     };
-    this.usuarioObj = this.usuarioService.getUsuario(this.user.usuario)
-    
-    if(this.user.confirmaPass!=this.user.password)
-    {
-      
-      this.presentToast('Las contraseñas no coinciden');
-    }
-    else{
-      
-      if(this.validateModel(this.user)){
-          console.log(this.usuarioObj)
-          console.log(this.user.password)
-          this.usuarioObj.password = this.user.password
-          
-          console.log(this.usuarioObj)
-          this.presentToast('Contraseña modificada');
-          this.router.navigate(['/login'],navigationExtras);
-      }  
-      else
+    if(this.validateModel(this.user)){
+      let usuarioObj= this.usuarioService.getUsuario(this.user.usuario);
+      if(this.user.confirmaPass!=this.user.password)
       {
-        this.presentToast('Falta completar: '+this.campo);
+        
+        this.presentToast('Las contraseñas no coinciden');
       }
+      else{
+          usuarioObj.then( res=>{
+              this.usuarioService.updateUsuario(res.id,res.name_user,res.user,this.user.password);
+              this.presentToast('Contraseña actualizada');
+              this.router.navigate(['/login'],navigationExtras);
+          }).catch(function(e){
+            alert('Usuario no registrado');
+            
+          });   
+      }
+    }
+    else
+    {
+      this.presentToast('Falta completar: '+this.campo);
     }
   }
 

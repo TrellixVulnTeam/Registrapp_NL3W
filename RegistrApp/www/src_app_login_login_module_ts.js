@@ -137,16 +137,20 @@ let LoginPage = class LoginPage {
             }
         };
         if (this.validateModel(this.user)) {
-            this.usuarioServic = this.usuarioService.getUsuario(this.user.usuario);
-            if (this.usuarioService.getUsuario(this.user.usuario).password === this.user.password) {
-                this.router.navigate(['/home'], navigationExtras);
-            }
-            else {
-                this.presentToast('Usuario o contraseña no validos');
-            }
+            let usuarioObtenido = this.usuarioService.getUsuario(this.user.usuario);
+            usuarioObtenido.then(res => {
+                if (res.pass === this.user.password) {
+                    this.router.navigate(['/home'], navigationExtras);
+                }
+                else {
+                    this.presentToast('Usuario o contraseña no validos');
+                }
+            }).catch(function (e) {
+                alert('Usuario no registrado');
+            });
         }
         else {
-            this.presentToast('Falta completar: ' + this.campo);
+            this.presentToast('Falta completar campo: ' + this.campo);
         }
     }
     /**

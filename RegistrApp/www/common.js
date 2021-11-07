@@ -660,7 +660,6 @@ let ContactosService = class ContactosService {
     constructor(db) {
         this.listaContactos = [];
         this.db = db;
-        alert('Constructor db');
     }
     getDbState() {
         return this.db.getDatabaseState();
@@ -1129,7 +1128,7 @@ let SignupPage = class SignupPage {
         }
         else {
             if (this.validateModel(this.usuario)) {
-                this.usuarioService.addUsuario(this.usuario.name.valueOf(), this.usuario.user.valueOf(), this.usuario.password.valueOf(), this.usuario.confirm_password.valueOf()),
+                this.usuarioService.addUsuario(this.usuario.name.valueOf(), this.usuario.user.valueOf(), this.usuario.password.valueOf()),
                     this.presentToast('Datos registrados correctamente');
                 this.router.navigate(['/login'], navigationExtras);
             }
@@ -1189,29 +1188,63 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UsuarioService": () => (/* binding */ UsuarioService)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 4001);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 8806);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 4001);
+/* harmony import */ var _servicios_data_base_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../servicios/data-base.service */ 8133);
+
 
 
 let UsuarioService = class UsuarioService {
-    constructor() {
-        this.listaUsuario = [
-            {
-                name: 'usuario',
-                user: 'user',
-                password: '123456'
-            },
-        ];
+    constructor(db) {
+        this.listaUsuarios = [];
+        this.db = db;
     }
-    getUsuario(usuarioInput) {
-        return Object.assign({}, this.listaUsuario.find(usuario => { return usuario.user === usuarioInput; }));
+    getDbState() {
+        return this.db.getDatabaseState();
     }
-    addUsuario(nombre, apellidos, usuario, password) {
+    getUsuarios() {
+        this.db.getDatabaseState().subscribe(rdy => {
+            if (rdy) {
+                this.db.getUsuarios().subscribe(usuarios => {
+                    this.listaUsuarios = usuarios;
+                });
+            }
+        });
+        return this.listaUsuarios;
+    }
+    getUsuario(usuario) {
+        return this.db.getUsuario(usuario).then(data => {
+            this.usuario = data;
+            return this.usuario;
+        });
+    }
+    addUsuario(name, user, password) {
+        this.db.getDatabaseState().subscribe(rdy => {
+            if (rdy) {
+                this.db.addUsuario(name, user, password);
+            }
+        });
+    }
+    updateUsuario(id, name_user, user, pass) {
+        this.db.getDatabaseState().subscribe(rdy => {
+            if (rdy) {
+                this.db.updateUsuario(name_user, user, pass, id);
+            }
+        });
+    }
+    deleteUsuario(id) {
+        this.db.getDatabaseState().subscribe(rdy => {
+            if (rdy) {
+                this.db.deleteUsuario(id);
+            }
+        });
     }
 };
-UsuarioService.ctorParameters = () => [];
-UsuarioService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
+UsuarioService.ctorParameters = () => [
+    { type: _servicios_data_base_service__WEBPACK_IMPORTED_MODULE_0__.DataBaseService }
+];
+UsuarioService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
         providedIn: 'root'
     })
 ], UsuarioService);

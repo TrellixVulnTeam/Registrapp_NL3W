@@ -31,18 +31,23 @@ export class LoginPage implements OnInit {
       }
     };
     if(this.validateModel(this.user)){
-      this.usuarioServic=this.usuarioService.getUsuario(this.user.usuario);
-      if(this.usuarioService.getUsuario(this.user.usuario).password === this.user.password){
-        this.router.navigate(['/home'],navigationExtras);
-      }else{
-        this.presentToast('Usuario o contraseña no validos');
-      }
-    }
-    else
-    {
-      this.presentToast('Falta completar: '+this.campo);
-    }
+      let usuarioObtenido= this.usuarioService.getUsuario(this.user.usuario);
+      usuarioObtenido.then( res=>{
 
+        if( res.pass === this.user.password){
+          this.router.navigate(['/home'],navigationExtras);
+        }else{
+          this.presentToast('Usuario o contraseña no validos');
+        }
+
+      }).catch(function(e){
+        alert('Usuario no registrado');
+      });
+    }
+    else{
+      this.presentToast('Falta completar campo: '+ this.campo);
+    }
+    
   }
    /**
    * Muestra un toast al usuario

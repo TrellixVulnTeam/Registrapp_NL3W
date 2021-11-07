@@ -13,7 +13,7 @@ export class ContactosService {
 
   constructor(db: DataBaseService) { 
     this.db=db;
-    alert('Constructor db'); 
+    
   }
 
   getDbState()
