@@ -26,7 +26,6 @@ export class DetalleContactoPage implements OnInit {
       this.activateRoute.paramMap.subscribe(
        paramMap=>{
          const idContactoRecibido=paramMap.get('contactoId');
-         alert(idContactoRecibido);
         this.contactoService.getContacto(idContactoRecibido).then(res=>{
         this.contacto=res;
         this.contacto.id=idContactoRecibido;
@@ -40,7 +39,7 @@ export class DetalleContactoPage implements OnInit {
       this.activateRoute.paramMap.subscribe(
         paramMap=>{
           const idContactoRecibido=paramMap.get('contactoId');
-          alert(idContactoRecibido);
+          
          this.contactoService.getContacto(idContactoRecibido).then(res=>{
          this.contacto=res;
          this.contacto.id=idContactoRecibido;

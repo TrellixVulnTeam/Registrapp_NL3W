@@ -35,11 +35,9 @@ export class ContactosService {
   }
 
   getContacto(idContacto: string): Promise<Contacto>{
-    alert('getContacto');
 
     return this.db.getContacto(idContacto).then(data => {
         this.contacto = data;
-        alert('Contacto Obtenido');
         return this.contacto;
         
      });
