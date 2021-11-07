@@ -8,11 +8,18 @@ import { ContactosService } from './contactos.service';
 })
 export class ContactosPage implements OnInit {
   listaContactos = [];
+  contactoService: ContactosService;
   
-  constructor( private contactoService: ContactosService ) {}
+  constructor( contactoService: ContactosService ) {
+    this.contactoService=contactoService;
+  }
   
   ngOnInit() {
     this.listaContactos=this.contactoService.getContactos();
+  }
+  ionViewWillEnter() {
+    
+   this.listaContactos=this.contactoService.getContactos();
   }
 }
 

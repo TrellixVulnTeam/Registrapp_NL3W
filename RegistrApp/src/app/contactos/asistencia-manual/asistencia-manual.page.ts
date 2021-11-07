@@ -15,16 +15,19 @@ export class AsistenciaManualPage implements OnInit {
     apellidos: '',
     email: '',
   };
-
+  contactoService: ContactosService;
   campo: string;
 
 
 
-  constructor(private router: Router,public toastController: ToastController, private contactoService: ContactosService ) { }
+  constructor(private router: Router,public toastController: ToastController,
+    contactoService: ContactosService) {
+      this.contactoService=contactoService;
+     }
 
   ngOnInit() {
   }
-  onSubmit() {
+  registrarContacto() {
     const navigationExtras: NavigationExtras = {
       state: {
         contact: this.contact 
@@ -38,7 +41,7 @@ export class AsistenciaManualPage implements OnInit {
           this.contact.apellidos.valueOf(),
           this.contact.email.valueOf()),
           this.presentToast('Datos registrados correctamente');
-          this.router.navigate(['/contactos'],navigationExtras);
+          
       }  
       else
       {

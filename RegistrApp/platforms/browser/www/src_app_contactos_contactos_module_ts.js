@@ -110,10 +110,13 @@ __webpack_require__.r(__webpack_exports__);
 
 let ContactosPage = class ContactosPage {
     constructor(contactoService) {
-        this.contactoService = contactoService;
         this.listaContactos = [];
+        this.contactoService = contactoService;
     }
     ngOnInit() {
+        this.listaContactos = this.contactoService.getContactos();
+    }
+    ionViewWillEnter() {
         this.listaContactos = this.contactoService.getContactos();
     }
 };

@@ -7,7 +7,7 @@ import { Contacto } from './contacto.model';
 })
 export class ContactosService {
 
-  listaContactos: Contacto[]= []
+  public listaContactos: Contacto[]= []
   contacto: Contacto;
   db: DataBaseService;
 
@@ -23,7 +23,7 @@ export class ContactosService {
 
   getContactos()
   {
-    alert('Obtiene contactos ');
+    
     this.db.getDatabaseState().subscribe(rdy => {
       if (rdy) {
         this.db.getContactos().subscribe(contactos => {
