@@ -33,21 +33,22 @@ export class ReestablecerPage implements OnInit {
       }
     };
     if(this.validateModel(this.user)){
-      let usuarioObj= this.usuarioService.getUsuario(this.user.usuario);
+      
       if(this.user.confirmaPass!=this.user.password)
       {
         
         this.presentToast('Las contraseñas no coinciden');
       }
       else{
-          usuarioObj.then( res=>{
-              this.usuarioService.updateUsuario(res.id,res.name_user,res.user,this.user.password);
-              this.presentToast('Contraseña actualizada');
-              this.router.navigate(['/login'],navigationExtras);
-          }).catch(function(e){
-            alert('Usuario no registrado');
-            
-          });   
+          let usuarioObj= this.usuarioService.getUsuario(this.user.usuario);
+            usuarioObj.then( res=>{
+                this.usuarioService.updateUsuario(res.id,res.name_user,res.user,this.user.password);
+                this.presentToast('Contraseña actualizada');
+                this.router.navigate(['/login'],navigationExtras);
+            }).catch(function(e){
+              alert('Usuario no registrado');
+            });   
+          
       }
     }
     else

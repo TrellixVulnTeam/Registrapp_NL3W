@@ -18,22 +18,22 @@ export class LoginPage implements OnInit {
   };
  usuarioServic: Usuario;  
  campo:string;
-
+ usuario: string;
   constructor(private sqLite: SQLite,private router: Router,private toastController: ToastController,
     private usuarioService: UsuarioService) { } 
   ngOnInit(){
   }
   ingresar(){
-    
     let navigationExtras: NavigationExtras = {
       state: {
-        user: this.user 
+        user:this.user
       }
     };
+    
     if(this.validateModel(this.user)){
       let usuarioObtenido= this.usuarioService.getUsuario(this.user.usuario);
       usuarioObtenido.then( res=>{
-
+        
         if( res.pass === this.user.password){
           this.router.navigate(['/home'],navigationExtras);
         }else{

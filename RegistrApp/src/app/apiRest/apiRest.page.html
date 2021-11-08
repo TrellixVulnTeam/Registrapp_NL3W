@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="primary">Listado Docentes</ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button color="primary" routerLink="/home">
+                <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content [ngClass]="'blogcontainer'">
+    <ngx-masonry [useImagesLoaded]="true" [options]="{ transitionDuration: '0.8s' }">
+        <ion-card ngxMasonryItem class="masonry-item welcome-card" *ngFor="let datos of datosObservable | async">
+        
+            <ion-card-header>
+                <ion-card-title>{{datos.id}} {{datos.name}}</ion-card-title>
+            </ion-card-header>
+            {{datos.body}}
+        </ion-card>
+    </ngx-masonry>
+</ion-content> -->
+
+
+
+
+<ion-content [fullscreen]="true">
+    <ion-list *ngFor="let datos of datosObservable | async">  
+      <ion-item >
+        <ion-avatar slot="start">
+          <ion-img src= "assets/img/avatar.png"></ion-img>
+        </ion-avatar>
+        <ion-label>
+            {{datos.id}} {{datos.name}} 
+        </ion-label>
+        <ion-label slot="end">
+            {{datos.email}}
+        </ion-label>
+      </ion-item>  
+    </ion-list>
+</ion-content>
+  

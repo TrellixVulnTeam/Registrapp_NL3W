@@ -52,6 +52,10 @@ const routes = [
         path: 'signup',
         loadChildren: () => __webpack_require__.e(/*! import() */ "common").then(__webpack_require__.bind(__webpack_require__, /*! ./login/signup/signup.module */ 7754)).then(m => m.SignupPageModule)
     },
+    {
+        path: 'apiRest',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_apiRest_apiRest_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./apiRest/apiRest.module */ 8515)).then(m => m.ApiRestPageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };

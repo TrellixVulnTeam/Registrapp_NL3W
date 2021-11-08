@@ -125,11 +125,11 @@ let ReestablecerPage = class ReestablecerPage {
             }
         };
         if (this.validateModel(this.user)) {
-            let usuarioObj = this.usuarioService.getUsuario(this.user.usuario);
             if (this.user.confirmaPass != this.user.password) {
                 this.presentToast('Las contraseñas no coinciden');
             }
             else {
+                let usuarioObj = this.usuarioService.getUsuario(this.user.usuario);
                 usuarioObj.then(res => {
                     this.usuarioService.updateUsuario(res.id, res.name_user, res.user, this.user.password);
                     this.presentToast('Contraseña actualizada');
