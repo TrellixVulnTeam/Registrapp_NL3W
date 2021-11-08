@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./login/signup/signup.module').then( m => m.SignupPageModule)
   },
+  {
+    path: 'apiRest',
+    loadChildren: () => import('./apiRest/apiRest.module').then( m => m.ApiRestPageModule)
+  },
   
 
 
