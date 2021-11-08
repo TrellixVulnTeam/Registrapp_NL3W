@@ -90,33 +90,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HomePage": () => (/* binding */ HomePage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 8806);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 8806);
 /* harmony import */ var _D_Duoc_UC_2_a_o_2_semestre_Programacion_app_movil_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_home_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./home.page.html */ 2056);
 /* harmony import */ var _home_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.page.scss */ 968);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 4001);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 3252);
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 4001);
 
 
 
 
 let HomePage = class HomePage {
-    constructor(activatedRoute, router) {
-        this.activatedRoute = activatedRoute;
-        this.router = router;
-    }
-    ngOnInit() {
-        this.activatedRoute.queryParams.subscribe(params => {
-            this.user = this.router.getCurrentNavigation().extras.state.user.usuario;
-        });
-    }
+    constructor() { }
 };
-HomePage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.ActivatedRoute },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__.Router }
-];
-HomePage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
+HomePage.ctorParameters = () => [];
+HomePage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
         selector: 'app-home',
         template: _D_Duoc_UC_2_a_o_2_semestre_Programacion_app_movil_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_home_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_home_page_scss__WEBPACK_IMPORTED_MODULE_1__]

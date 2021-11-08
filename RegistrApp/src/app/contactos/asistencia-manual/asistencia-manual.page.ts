@@ -15,32 +15,27 @@ export class AsistenciaManualPage implements OnInit {
     apellidos: '',
     email: '',
   };
+  
   contactoService: ContactosService;
   campo: string;
-
+  user: string;
 
 
   constructor(private router: Router,public toastController: ToastController,
     contactoService: ContactosService) {
-      this.contactoService=contactoService;
+      this.contactoService=contactoService;   
      }
 
   ngOnInit() {
   }
   registrarContacto() {
-    const navigationExtras: NavigationExtras = {
-      state: {
-        contact: this.contact 
-      }
-    };
-    
-    
+      
       if(this.validateModel(this.contact)){
         this.contactoService.addContacto(
           this.contact.nombre.valueOf(),
           this.contact.apellidos.valueOf(),
           this.contact.email.valueOf()),
-          this.presentToast('Datos registrados correctamente');
+          this.presentToast('Datos registrados correctamente',);
           
       }  
       else

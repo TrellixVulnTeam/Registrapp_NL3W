@@ -585,11 +585,6 @@ let AsistenciaManualPage = class AsistenciaManualPage {
     ngOnInit() {
     }
     registrarContacto() {
-        const navigationExtras = {
-            state: {
-                contact: this.contact
-            }
-        };
         if (this.validateModel(this.contact)) {
             this.contactoService.addContacto(this.contact.nombre.valueOf(), this.contact.apellidos.valueOf(), this.contact.email.valueOf()),
                 this.presentToast('Datos registrados correctamente');
@@ -1257,7 +1252,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header class=\"ion-no-border\">\n    <ion-toolbar>\n        <ion-buttons slot=\"start\">\n            <ion-button color=\"primary\" routerLink=\"/home\"> <!--Error al devolverse-->\n                <ion-icon slot=\"icon-only\" name=\"arrow-back\"></ion-icon>\n            </ion-button>\n        </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content>\n    <h1>Registro De Asistencia<br />Manual</h1>\n\n    <div id=\"form\">\n        <ion-item class=\"ion-margin-bottom\">\n            <ion-input [(ngModel)]=\"contact.nombre\" placeholder=\"Nombre\" type=\"text\"></ion-input>\n        </ion-item>\n\n        <ion-item class=\"ion-margin-bottom\">\n            <ion-input [(ngModel)]=\"contact.apellidos\" placeholder=\"Apellidos\" type=\"text\"></ion-input>\n        </ion-item>\n        <ion-item class=\"ion-margin-bottom\">\n            <ion-input [(ngModel)]=\"contact.email\" placeholder=\"email@ejemplo.com\" [type]=\"type\"></ion-input>\n        </ion-item>\n\n        <ion-button expand=\"block\" shape=\"round\" (click)=\"registrarContacto()\">Registrar Asistencia</ion-button>\n    </div>\n\n</ion-content>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header class=\"ion-no-border\">\n    <ion-toolbar>\n        <ion-buttons slot=\"start\">\n            <ion-button color=\"primary\" routerLink=\"/home\">\n              <ion-icon slot=\"icon-only\" name=\"arrow-back\"></ion-icon>\n            </ion-button>\n          </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content>\n    <h1>Registro De Asistencia<br />Manual</h1>\n\n    <div id=\"form\">\n        <ion-item class=\"ion-margin-bottom\">\n            <ion-input [(ngModel)]=\"contact.nombre\" placeholder=\"Nombre\" type=\"text\"></ion-input>\n        </ion-item>\n\n        <ion-item class=\"ion-margin-bottom\">\n            <ion-input [(ngModel)]=\"contact.apellidos\" placeholder=\"Apellidos\" type=\"text\"></ion-input>\n        </ion-item>\n        <ion-item class=\"ion-margin-bottom\">\n            <ion-input [(ngModel)]=\"contact.email\" placeholder=\"email@ejemplo.com\" [type]=\"type\"></ion-input>\n        </ion-item>\n\n        <ion-button expand=\"block\" shape=\"round\" (click)=\"registrarContacto()\">Registrar Asistencia</ion-button>\n    </div>\n\n</ion-content>");
 
 /***/ }),
 
