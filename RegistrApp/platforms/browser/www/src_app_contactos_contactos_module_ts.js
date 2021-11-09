@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ContactosPage": () => (/* binding */ ContactosPage)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _D_Duoc_UC_2_a_o_2_semestre_Programacion_app_movil_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_contactos_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./contactos.page.html */ 7238);
+/* harmony import */ var _C_Users_Carolina_Alvarado_Desktop_entrega_final_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_contactos_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./contactos.page.html */ 7238);
 /* harmony import */ var _contactos_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contactos.page.scss */ 5580);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 4001);
 /* harmony import */ var _contactos_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contactos.service */ 6658);
@@ -126,7 +126,7 @@ ContactosPage.ctorParameters = () => [
 ContactosPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-contactos',
-        template: _D_Duoc_UC_2_a_o_2_semestre_Programacion_app_movil_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_contactos_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _C_Users_Carolina_Alvarado_Desktop_entrega_final_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_contactos_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_contactos_page_scss__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], ContactosPage);
@@ -146,7 +146,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-button color=\"primary\" routerLink=\"/contactos\">Lista de Curso</ion-button>\n    </ion-buttons>\n    <ion-buttons slot=\"end\">\n      <ion-button color=\"primary\" routerLink=\"/home\">\n        <ion-icon slot=\"icon-only\" name=\"arrow-back\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content [fullscreen]=\"true\">\n  <ion-list *ngFor=\"let element of listaContactos\">  \n    <ion-item [routerLink]=\"['./', element.id]\">\n      <ion-avatar slot=\"start\">\n        <ion-img src= \"assets/img/avatar.png\"></ion-img>\n      </ion-avatar>\n      <ion-label>\n        {{element.id}} {{element.nombre}} {{element.apellidos}}\n      </ion-label>\n    </ion-item>  \n  </ion-list>\n</ion-content>\n\n\n\n\n\n\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-button color=\"primary\" routerLink=\"/contactos\">Lista de Curso</ion-button>\r\n    </ion-buttons>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button color=\"primary\" routerLink=\"/home\">\r\n        <ion-icon slot=\"icon-only\" name=\"arrow-back\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-list *ngFor=\"let element of listaContactos\">  \r\n    <ion-item [routerLink]=\"['./', element.id]\">\r\n      <ion-avatar slot=\"start\">\r\n        <ion-img src= \"assets/img/avatar.png\"></ion-img>\r\n      </ion-avatar>\r\n      <ion-label>\r\n        {{element.id}} {{element.nombre}} {{element.apellidos}}\r\n      </ion-label>\r\n    </ion-item>  \r\n  </ion-list>\r\n</ion-content>\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
 
 /***/ }),
 

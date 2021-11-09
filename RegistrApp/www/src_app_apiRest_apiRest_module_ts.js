@@ -56,7 +56,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ApiRestPage": () => (/* binding */ ApiRestPage)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _D_Duoc_UC_2_a_o_2_semestre_Programacion_app_movil_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_apiRest_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./apiRest.page.html */ 322);
+/* harmony import */ var _C_Users_Carolina_Alvarado_Desktop_entrega_final_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_apiRest_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./apiRest.page.html */ 322);
 /* harmony import */ var _apiRest_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./apiRest.page.scss */ 1291);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 4001);
 /* harmony import */ var _servicios_rest_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../servicios/rest.service */ 7432);
@@ -79,7 +79,7 @@ ApiRestPage.ctorParameters = () => [
 ApiRestPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-apiRest',
-        template: _D_Duoc_UC_2_a_o_2_semestre_Programacion_app_movil_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_apiRest_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _C_Users_Carolina_Alvarado_Desktop_entrega_final_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_apiRest_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_apiRest_page_scss__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], ApiRestPage);
