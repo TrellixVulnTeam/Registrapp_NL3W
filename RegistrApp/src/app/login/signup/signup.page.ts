@@ -15,7 +15,7 @@ export class SignupPage implements OnInit {
   password:'',
   confirm_password:''
   };
-
+  existe: boolean;
   campo: string;
 
   constructor(private router: Router,public toastController: ToastController, private usuarioService: UsuarioService ) { }
@@ -35,13 +35,17 @@ export class SignupPage implements OnInit {
     }
     else{
       if(this.validateModel(this.usuario)){
-        this.usuarioService.addUsuario(
-          this.usuario.name.valueOf(),
-          this.usuario.user.valueOf(),
-          this.usuario.password.valueOf()),
-          this.presentToast('Datos registrados correctamente');
-          this.router.navigate(['/login'],navigationExtras);
-      }  
+        
+          this.usuarioService.addUsuario(
+            this.usuario.name.valueOf(),
+            this.usuario.user.valueOf(),
+            this.usuario.password.valueOf()),
+            this.presentToast('Datos registrados correctamente');
+            this.router.navigate(['/login'],navigationExtras);
+      
+    }
+        
+      
       else
       {
         this.presentToast('Falta completar: '+this.campo);

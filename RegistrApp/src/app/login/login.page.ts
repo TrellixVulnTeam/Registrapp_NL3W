@@ -1,6 +1,6 @@
 import { UsuarioService } from './signup/usuario.service';
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
+import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Usuario } from './signup/usuario.model';
 import { SQLite } from '@ionic-native/sqlite/ngx';
@@ -24,18 +24,14 @@ export class LoginPage implements OnInit {
   ngOnInit(){
   }
   ingresar(){
-    let navigationExtras: NavigationExtras = {
-      state: {
-        user:this.user
-      }
-    };
-    
+
     if(this.validateModel(this.user)){
       let usuarioObtenido= this.usuarioService.getUsuario(this.user.usuario);
       usuarioObtenido.then( res=>{
         
         if( res.pass === this.user.password){
-          this.router.navigate(['/home'],navigationExtras);
+          localStorage.setItem('user', res.name_user);
+          this.router.navigate(['/home']);
         }else{
           this.presentToast('Usuario o contraseña no validos');
         }

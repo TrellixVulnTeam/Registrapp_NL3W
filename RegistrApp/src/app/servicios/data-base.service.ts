@@ -28,7 +28,7 @@ export class DataBaseService {
   private usuario: Usuario;
 
   private contacto: Contacto;
-
+  existe: boolean; 
   constructor(
     http: HttpClient,
     plataforma: Platform,
@@ -194,6 +194,7 @@ export class DataBaseService {
         };
       });
   }
+
 
   addUsuario(name, user, password) {
     let data = [name, user, password];

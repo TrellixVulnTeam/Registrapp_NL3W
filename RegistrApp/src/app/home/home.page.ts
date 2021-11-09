@@ -8,12 +8,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomePage implements OnInit{
   
-  user: '';
+  user = localStorage.getItem("user");
+
   constructor(private activatedRoute: ActivatedRoute, private router : Router) {}
   ngOnInit(){
-    this.activatedRoute.queryParams.subscribe(params => {
-      this.user = this.router.getCurrentNavigation().extras.state.user.usuario;
-  });
+    
   }
 
 }
