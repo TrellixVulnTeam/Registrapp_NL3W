@@ -14,14 +14,9 @@ interface Dato {
 
 
 export class RestService {
-
   dato:Dato;
 
-
-
-
   public baseUrl = 'https://jsonplaceholder.typicode.com/users';
-
 
   constructor(
       private httpClient: HttpClient ) {  }
@@ -29,17 +24,5 @@ export class RestService {
   get_Datos() {
     return this.httpClient.get(this.baseUrl );
   }
-
-  get_DatosUserId(id) {
-    let stringUrl=this.baseUrl +'?userId='+id;
-    alert("----->>>"+stringUrl);
-    return this.httpClient.get(stringUrl );
-  }
- get_DatosPos(id): Observable<Dato>{
-  
-    let stringUrl=this.baseUrl +'/'+id;
-    alert("----->>>"+stringUrl);
-    return  this.httpClient.get<Dato>(stringUrl);
-}
 
 }
