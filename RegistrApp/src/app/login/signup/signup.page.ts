@@ -15,9 +15,9 @@ export class SignupPage implements OnInit {
   password:'',
   confirm_password:''
   };
-
+  cant: number = 0;
   campo: string;
-
+  existe: boolean = false;
   constructor(private router: Router,public toastController: ToastController, private usuarioService: UsuarioService ) { }
 
   ngOnInit() {
@@ -35,13 +35,24 @@ export class SignupPage implements OnInit {
     }
     else{
       if(this.validateModel(this.usuario)){
+        this.cant = 0;
+        for(let i=0;i<this.usuarioService.getUsuarios().length;i++){
+          if(this.usuario.user == this.usuarioService.getUsuarios()[i].user){
+            this.cant = this.cant+1;
+          }
+        }
+        if(this.cant>=1){
+          this.existe = true;
+          alert('Usuario ya registrado');
+        }else{
         this.usuarioService.addUsuario(
           this.usuario.name.valueOf(),
           this.usuario.user.valueOf(),
           this.usuario.password.valueOf()),
           this.presentToast('Datos registrados correctamente');
           this.router.navigate(['/login'],navigationExtras);
-      }  
+        }
+      }
       else
       {
         this.presentToast('Falta completar: '+this.campo);
