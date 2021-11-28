@@ -120,7 +120,8 @@ module.exports.metadata =
     "cordova-plugin-ionic-webview": "4.2.1",
     "cordova-plugin-ionic-keyboard": "2.2.0",
     "uk.co.workingedge.cordova.plugin.sqliteporter": "1.1.1",
-    "cordova-plugin-camera": "5.0.3"
+    "cordova-plugin-camera": "5.0.3",
+    "cordova-plugin-geolocation": "4.1.0"
 }
 // BOTTOM OF METADATA
 });

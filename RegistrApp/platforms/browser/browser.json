@@ -48,6 +48,10 @@
     },
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "io.ionic.starter"
     }
   },
   "dependent_plugins": {},
@@ -170,6 +174,7 @@
     "cordova-plugin-ionic-webview": "4.2.1",
     "cordova-plugin-ionic-keyboard": "2.2.0",
     "uk.co.workingedge.cordova.plugin.sqliteporter": "1.1.1",
-    "cordova-plugin-camera": "5.0.3"
+    "cordova-plugin-camera": "5.0.3",
+    "cordova-plugin-geolocation": "4.1.0"
   }
 }
