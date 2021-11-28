@@ -56,7 +56,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ApiRestPage": () => (/* binding */ ApiRestPage)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _C_Users_Carolina_Alvarado_Desktop_entrega_final_ahora_si_que_si_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_apiRest_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./apiRest.page.html */ 322);
+/* harmony import */ var _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_apiRest_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./apiRest.page.html */ 322);
 /* harmony import */ var _apiRest_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./apiRest.page.scss */ 1291);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 4001);
 /* harmony import */ var _servicios_rest_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../servicios/rest.service */ 7432);
@@ -79,7 +79,7 @@ ApiRestPage.ctorParameters = () => [
 ApiRestPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-apiRest',
-        template: _C_Users_Carolina_Alvarado_Desktop_entrega_final_ahora_si_que_si_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_apiRest_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_apiRest_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_apiRest_page_scss__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], ApiRestPage);
@@ -112,16 +112,6 @@ let RestService = class RestService {
     get_Datos() {
         return this.httpClient.get(this.baseUrl);
     }
-    get_DatosUserId(id) {
-        let stringUrl = this.baseUrl + '?userId=' + id;
-        alert("----->>>" + stringUrl);
-        return this.httpClient.get(stringUrl);
-    }
-    get_DatosPos(id) {
-        let stringUrl = this.baseUrl + '/' + id;
-        alert("----->>>" + stringUrl);
-        return this.httpClient.get(stringUrl);
-    }
 };
 RestService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient }
@@ -146,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n        <ion-buttons slot=\"start\">\r\n            <ion-button color=\"primary\">Listado Docentes</ion-button>\r\n        </ion-buttons>\r\n        <ion-buttons slot=\"end\">\r\n            <ion-button color=\"primary\" routerLink=\"/home\">\r\n                <ion-icon slot=\"icon-only\" name=\"arrow-back\"></ion-icon>\r\n            </ion-button>\r\n        </ion-buttons>\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n<!-- <ion-content [ngClass]=\"'blogcontainer'\">\r\n    <ngx-masonry [useImagesLoaded]=\"true\" [options]=\"{ transitionDuration: '0.8s' }\">\r\n        <ion-card ngxMasonryItem class=\"masonry-item welcome-card\" *ngFor=\"let datos of datosObservable | async\">\r\n        \r\n            <ion-card-header>\r\n                <ion-card-title>{{datos.id}} {{datos.name}}</ion-card-title>\r\n            </ion-card-header>\r\n            {{datos.body}}\r\n        </ion-card>\r\n    </ngx-masonry>\r\n</ion-content> -->\r\n\r\n\r\n\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n    <ion-list *ngFor=\"let datos of datosObservable | async\">  \r\n      <ion-item >\r\n        <ion-avatar slot=\"start\">\r\n          <ion-img src= \"assets/img/avatar.png\"></ion-img>\r\n        </ion-avatar>\r\n        <ion-label>\r\n            {{datos.id}} {{datos.name}} \r\n        </ion-label>\r\n        <ion-label slot=\"end\">\r\n            {{datos.email}}\r\n        </ion-label>\r\n      </ion-item>  \r\n    </ion-list>\r\n</ion-content>\r\n  ");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n        <ion-buttons slot=\"start\">\r\n            <ion-button color=\"primary\">Listado Docentes</ion-button>\r\n        </ion-buttons>\r\n        <ion-buttons slot=\"end\">\r\n            <ion-button color=\"primary\" routerLink=\"/home\">\r\n                <ion-icon slot=\"icon-only\" name=\"arrow-back\"></ion-icon>\r\n            </ion-button>\r\n        </ion-buttons>\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n    <ion-list *ngFor=\"let datos of datosObservable | async\">  \r\n      <ion-item >\r\n        <ion-avatar slot=\"start\">\r\n          <ion-img src= \"assets/img/avatar.png\"></ion-img>\r\n        </ion-avatar>\r\n        <ion-label>\r\n            {{datos.id}} {{datos.name}} \r\n        </ion-label>\r\n        <ion-label slot=\"end\">\r\n            {{datos.email}}\r\n        </ion-label>\r\n      </ion-item>  \r\n    </ion-list>\r\n</ion-content>\r\n  ");
 
 /***/ }),
 

@@ -102,7 +102,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "LoginPage": () => (/* binding */ LoginPage)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _C_Users_Carolina_Alvarado_Desktop_entrega_final_ahora_si_que_si_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_login_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./login.page.html */ 9403);
+/* harmony import */ var _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_login_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./login.page.html */ 9403);
 /* harmony import */ var _login_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./login.page.scss */ 6051);
 /* harmony import */ var _signup_usuario_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./signup/usuario.service */ 7312);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 4001);
@@ -182,7 +182,7 @@ LoginPage.ctorParameters = () => [
 LoginPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-login',
-        template: _C_Users_Carolina_Alvarado_Desktop_entrega_final_ahora_si_que_si_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_login_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_login_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_login_page_scss__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], LoginPage);

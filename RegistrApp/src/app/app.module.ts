@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { Camera } from '@ionic-native/camera/ngx';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx'
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +27,12 @@ import {DataBaseService} from '../app/servicios/data-base.service';
     AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     SQLite,
-    SQLitePorter,],
+    SQLitePorter,
+    StatusBar,
+    SplashScreen,
+    Camera,
+    WebView
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

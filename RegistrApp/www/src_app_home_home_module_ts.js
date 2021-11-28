@@ -91,7 +91,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "HomePage": () => (/* binding */ HomePage)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _C_Users_Carolina_Alvarado_Desktop_entrega_final_ahora_si_que_si_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_home_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./home.page.html */ 2056);
+/* harmony import */ var _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_home_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./home.page.html */ 2056);
 /* harmony import */ var _home_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.page.scss */ 968);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 4001);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 3252);
@@ -116,7 +116,7 @@ HomePage.ctorParameters = () => [
 HomePage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-home',
-        template: _C_Users_Carolina_Alvarado_Desktop_entrega_final_ahora_si_que_si_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_home_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_home_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_home_page_scss__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], HomePage);
@@ -135,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n        <ion-buttons slot=\"start\">\r\n            <ion-button color=\"primary\" routerLink=\"/home\">INICIO</ion-button>\r\n        </ion-buttons>\r\n        <ion-buttons slot=\"end\">\r\n            <ion-button color=\"primary\" routerLink=\"/login\">\r\n                <ion-icon slot=\"icon-only\" name=\"power-outline\"></ion-icon>\r\n            </ion-button>\r\n        </ion-buttons>\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n    <div id=\"header\">\r\n        <h1>Registro De Asistencia</h1>\r\n        <h2 class=\"welcome\">Bienvenido <b class=\"username\">{{this.user}}</b></h2>\r\n        <ion-button expand=\"block\" shape=\"round\" routerDirection=\"forward\">Generar QR asistencia</ion-button>\r\n        <ion-button routerLink=\"/contactos/asistencia-manual\" expand=\"block\" shape=\"round\" routerDirection=\"forward\">Asistencia Manual</ion-button>\r\n        <ion-button routerLink=\"/contactos\" expand=\"block\" shape=\"round\" routerDirection=\"forward\">Lista Presentes</ion-button>\r\n        <ion-button routerLink=\"/apiRest\" expand=\"block\" shape=\"round\" routerDirection=\"forward\">Listado de Docentes</ion-button>\r\n        <ion-button expand=\"block\" shape=\"round\" routerDirection=\"forward\">Escanear QR</ion-button>\r\n    </div>\r\n</ion-content>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header [translucent]=\"true\">\r\n    <ion-toolbar>\r\n        <ion-buttons slot=\"start\">\r\n            <ion-button color=\"primary\" routerLink=\"/home\">INICIO</ion-button>\r\n        </ion-buttons>\r\n        <ion-buttons slot=\"end\">\r\n            <ion-button color=\"primary\" routerLink=\"/login\">\r\n                <ion-icon slot=\"icon-only\" name=\"power-outline\"></ion-icon>\r\n            </ion-button>\r\n        </ion-buttons>\r\n    </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n    <div id=\"header\">\r\n        <h1>Registro De Asistencia</h1>\r\n        <h2 class=\"welcome\">Bienvenido <b class=\"username\">{{this.user}}</b></h2>\r\n        <ion-button expand=\"block\" shape=\"round\" routerDirection=\"forward\">Generar QR asistencia</ion-button>\r\n        <ion-button routerLink=\"/contactos/asistencia-manual\" expand=\"block\" shape=\"round\" routerDirection=\"forward\">Asistencia Manual</ion-button>\r\n        <ion-button routerLink=\"/contactos\" expand=\"block\" shape=\"round\" routerDirection=\"forward\">Lista Presentes</ion-button>\r\n        <ion-button routerLink=\"/apiRest\" expand=\"block\" shape=\"round\" routerDirection=\"forward\">Listado de Docentes</ion-button>\r\n        <ion-button expand=\"block\" shape=\"round\" routerDirection=\"forward\">Escanear QR</ion-button>\r\n        <ion-button routerLink=\"/camara\" expand=\"block\" shape=\"round\" routerDirection=\"forward\">Camara</ion-button>\r\n    </div>\r\n</ion-content>");
 
 /***/ }),
 
