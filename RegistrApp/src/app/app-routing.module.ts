@@ -42,7 +42,15 @@ const routes: Routes = [
   {
     path: 'apiRest',
     loadChildren: () => import('./apiRest/apiRest.module').then( m => m.ApiRestPageModule)
+  },  {
+    path: 'camara',
+    loadChildren: () => import('./camara/camara.module').then( m => m.CamaraPageModule)
   },
+  {
+    path: 'geolocalizacion',
+    loadChildren: () => import('./geolocalizacion/geolocalizacion.module').then( m => m.GeolocalizacionPageModule)
+  },
+
   
 
 

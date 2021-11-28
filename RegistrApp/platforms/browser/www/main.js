@@ -56,6 +56,14 @@ const routes = [
         path: 'apiRest',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_apiRest_apiRest_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./apiRest/apiRest.module */ 8515)).then(m => m.ApiRestPageModule)
     },
+    {
+        path: 'camara',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_camara_camara_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./camara/camara.module */ 4824)).then(m => m.CamaraPageModule)
+    },
+    {
+        path: 'geolocalizacion',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_geolocalizacion_geolocalizacion_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./geolocalizacion/geolocalizacion.module */ 1351)).then(m => m.GeolocalizacionPageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -84,7 +92,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _C_Users_Carolina_Alvarado_Desktop_entrega_final_ahora_si_que_si_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_app_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./app.component.html */ 5158);
+/* harmony import */ var _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_app_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./app.component.html */ 5158);
 /* harmony import */ var _app_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.scss */ 836);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 4001);
 
@@ -98,7 +106,7 @@ AppComponent.ctorParameters = () => [];
 AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
         selector: 'app-root',
-        template: _C_Users_Carolina_Alvarado_Desktop_entrega_final_ahora_si_que_si_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_app_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_app_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_app_component_scss__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], AppComponent);
@@ -118,17 +126,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 4001);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser */ 6219);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ 3252);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 2688);
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 2050);
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 3696);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ 3981);
-/* harmony import */ var _ionic_native_sqlite_porter_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/sqlite-porter/ngx */ 4842);
-/* harmony import */ var _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/sqlite/ngx */ 4297);
-/* harmony import */ var _app_servicios_data_base_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../app/servicios/data-base.service */ 8133);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tslib */ 8806);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 4001);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/platform-browser */ 6219);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/router */ 3252);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic/angular */ 2688);
+/* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ionic-native/camera/ngx */ 7091);
+/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ 651);
+/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ 7194);
+/* harmony import */ var _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/ionic-webview/ngx */ 226);
+/* harmony import */ var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/geolocation/ngx */ 1184);
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ 2050);
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ 3696);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common/http */ 3981);
+/* harmony import */ var _ionic_native_sqlite_porter_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/sqlite-porter/ngx */ 4842);
+/* harmony import */ var _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/sqlite/ngx */ 4297);
+/* harmony import */ var _app_servicios_data_base_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../app/servicios/data-base.service */ 8133);
+
+
+
+
+
 
 
 
@@ -144,20 +162,26 @@ let AppModule = class AppModule {
     constructor(db) { }
 };
 AppModule.ctorParameters = () => [
-    { type: _app_servicios_data_base_service__WEBPACK_IMPORTED_MODULE_4__.DataBaseService }
+    { type: _app_servicios_data_base_service__WEBPACK_IMPORTED_MODULE_9__.DataBaseService }
 ];
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.NgModule)({
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_11__.NgModule)({
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__.AppComponent],
         entryComponents: [],
-        imports: [_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpClientModule,
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.BrowserModule,
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicModule.forRoot(),
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule],
-        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_10__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicRouteStrategy },
-            _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_3__.SQLite,
-            _ionic_native_sqlite_porter_ngx__WEBPACK_IMPORTED_MODULE_2__.SQLitePorter,],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
+        imports: [_angular_common_http__WEBPACK_IMPORTED_MODULE_12__.HttpClientModule,
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_13__.BrowserModule,
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.IonicModule.forRoot(),
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_6__.AppRoutingModule],
+        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_15__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_14__.IonicRouteStrategy },
+            _ionic_native_sqlite_ngx__WEBPACK_IMPORTED_MODULE_8__.SQLite,
+            _ionic_native_sqlite_porter_ngx__WEBPACK_IMPORTED_MODULE_7__.SQLitePorter,
+            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_2__.StatusBar,
+            _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_1__.SplashScreen,
+            _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_0__.Camera,
+            _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_4__.Geolocation,
+            _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_3__.WebView,
+        ],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__.AppComponent],
     })
 ], AppModule);
 
