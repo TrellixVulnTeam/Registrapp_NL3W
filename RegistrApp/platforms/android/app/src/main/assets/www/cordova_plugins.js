@@ -101,6 +101,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
       "pluginId": "cordova-plugin-geolocation",
       "runs": true
+    },
+    {
+      "id": "cordova-plugin-android-permissions.Permissions",
+      "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+      "pluginId": "cordova-plugin-android-permissions",
+      "clobbers": [
+        "cordova.plugins.permissions"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -113,6 +121,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-sqlite-storage": "6.0.0",
     "uk.co.workingedge.cordova.plugin.sqliteporter": "1.1.1",
     "cordova-plugin-camera": "5.0.3",
-    "cordova-plugin-geolocation": "4.1.0"
+    "cordova-plugin-geolocation": "4.1.0",
+    "cordova-plugin-android-permissions": "1.1.2"
   };
 });

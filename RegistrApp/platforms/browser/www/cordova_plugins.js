@@ -107,6 +107,14 @@ module.exports = [
         "id": "cordova-plugin-camera.CameraProxy",
         "pluginId": "cordova-plugin-camera",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-android-permissions/www/permissions-dummy.js",
+        "id": "cordova-plugin-android-permissions.Permissions",
+        "pluginId": "cordova-plugin-android-permissions",
+        "clobbers": [
+            "cordova.plugins.permissions"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -121,7 +129,8 @@ module.exports.metadata =
     "cordova-plugin-ionic-keyboard": "2.2.0",
     "uk.co.workingedge.cordova.plugin.sqliteporter": "1.1.1",
     "cordova-plugin-camera": "5.0.3",
-    "cordova-plugin-geolocation": "4.1.0"
+    "cordova-plugin-geolocation": "4.1.0",
+    "cordova-plugin-android-permissions": "1.1.2"
 }
 // BOTTOM OF METADATA
 });

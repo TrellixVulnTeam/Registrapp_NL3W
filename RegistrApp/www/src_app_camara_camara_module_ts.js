@@ -91,7 +91,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "CamaraPage": () => (/* binding */ CamaraPage)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_camara_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./camara.page.html */ 2635);
+/* harmony import */ var _D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_camara_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./camara.page.html */ 2635);
 /* harmony import */ var _camara_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./camara.page.scss */ 6117);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 4001);
 /* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/camera/ngx */ 7091);
@@ -130,7 +130,7 @@ CamaraPage.ctorParameters = () => [
 CamaraPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
         selector: 'app-camara',
-        template: _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_camara_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_camara_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_camara_page_scss__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], CamaraPage);

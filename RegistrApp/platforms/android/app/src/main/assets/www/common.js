@@ -93,13 +93,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "a": () => (/* binding */ attachComponent),
 /* harmony export */   "d": () => (/* binding */ detachComponent)
 /* harmony export */ });
-/* harmony import */ var D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ 6675);
+/* harmony import */ var D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ 6675);
 /* harmony import */ var _helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers-dd7e4b7b.js */ 2787);
 
 
 
 const attachComponent = /*#__PURE__*/function () {
-  var _ref = (0,D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps) {
+  var _ref = (0,D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (delegate, container, component, cssClasses, componentProps) {
     if (delegate) {
       return delegate.attachViewToDom(container, component, componentProps, cssClasses);
     }
@@ -406,7 +406,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "h": () => (/* binding */ hostContext),
 /* harmony export */   "o": () => (/* binding */ openURL)
 /* harmony export */ });
-/* harmony import */ var D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ 6675);
+/* harmony import */ var D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@angular-devkit/build-angular/node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ 6675);
 
 
 const hostContext = (selector, el) => {
@@ -442,7 +442,7 @@ const getClassMap = classes => {
 const SCHEME = /^[a-z][a-z0-9+\-.]*:/;
 
 const openURL = /*#__PURE__*/function () {
-  var _ref = (0,D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, ev, direction, animation) {
+  var _ref = (0,D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_angular_devkit_build_angular_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, ev, direction, animation) {
     if (url != null && url[0] !== '#' && !SCHEME.test(url)) {
       const router = document.querySelector('ion-router');
 
@@ -557,7 +557,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AsistenciaManualPage": () => (/* binding */ AsistenciaManualPage)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_asistencia_manual_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./asistencia-manual.page.html */ 1600);
+/* harmony import */ var _D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_asistencia_manual_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./asistencia-manual.page.html */ 1600);
 /* harmony import */ var _asistencia_manual_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./asistencia-manual.page.scss */ 9193);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 4001);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 3252);
@@ -625,7 +625,7 @@ AsistenciaManualPage.ctorParameters = () => [
 AsistenciaManualPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
         selector: 'app-asistencia-manual',
-        template: _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_asistencia_manual_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_asistencia_manual_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_asistencia_manual_page_scss__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], AsistenciaManualPage);
@@ -800,7 +800,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DetalleContactoPage": () => (/* binding */ DetalleContactoPage)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_detalle_contacto_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./detalle-contacto.page.html */ 4449);
+/* harmony import */ var _D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_detalle_contacto_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./detalle-contacto.page.html */ 4449);
 /* harmony import */ var _detalle_contacto_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./detalle-contacto.page.scss */ 7982);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 4001);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 3252);
@@ -905,7 +905,7 @@ DetalleContactoPage.ctorParameters = () => [
 DetalleContactoPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
         selector: 'app-detalle-contacto',
-        template: _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_detalle_contacto_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_detalle_contacto_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_detalle_contacto_page_scss__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], DetalleContactoPage);
@@ -925,7 +925,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "InputComponent": () => (/* binding */ InputComponent)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_input_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./input.component.html */ 4066);
+/* harmony import */ var _D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_input_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./input.component.html */ 4066);
 /* harmony import */ var _input_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./input.component.scss */ 7021);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 4001);
 
@@ -943,7 +943,7 @@ InputComponent.propDecorators = {
 InputComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Component)({
         selector: 'app-input',
-        template: _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_input_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_input_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_input_component_scss__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], InputComponent);
@@ -1079,7 +1079,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SignupPage": () => (/* binding */ SignupPage)
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 8806);
-/* harmony import */ var _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_signup_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./signup.page.html */ 7255);
+/* harmony import */ var _D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_signup_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./signup.page.html */ 7255);
 /* harmony import */ var _signup_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./signup.page.scss */ 4115);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 4001);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 3252);
@@ -1172,7 +1172,7 @@ SignupPage.ctorParameters = () => [
 SignupPage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_6__.Component)({
         selector: 'app-signup',
-        template: _D_prueba_Registrapp_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_signup_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _D_RegistrApp_Registrap_v3_Registrapp_RegistrApp_node_modules_ngtools_webpack_src_loaders_direct_resource_js_signup_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_signup_page_scss__WEBPACK_IMPORTED_MODULE_1__]
     })
 ], SignupPage);
